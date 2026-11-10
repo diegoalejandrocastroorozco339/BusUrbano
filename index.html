@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusUrbano - Transporte Urbano</title>
+
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="Estruc.css">
+</head>
+
+<body>
+
+    <!-- ================================= -->
+    <!-- ENCABEZADO DE LA PÁGINA PRINCIPAL -->
+    <!-- ================================= -->
+
+    <header class="header-publico">
+
+        <a href="#" class="logo">
+            <span>BU</span> BusUrbano
+        </a>
+
+    <nav class="navegacion-publica">
+    <a href="#inicio">Inicio</a>
+    <a href="#rutas-publicas">Rutas</a>
+
+    <button class="btlogin" type="button">
+        Iniciar sesión
+    </button>
+
+    <button id="btn-administrador" class="btn-admin-publico" type="button">
+        Administrador
+    </button>
+</nav>
+
+    </header>
+
+
+    <!-- ================================= -->
+    <!-- PÁGINA PRINCIPAL -->
+    <!-- ================================= -->
+
+    <main class="inicio-publico" id="inicio">
+
+        <!-- PRESENTACIÓN PRINCIPAL -->
+
+        <section class="hero">
+
+            <div class="hero-texto">
+
+                <span class="etiqueta">
+                    TRANSPORTE URBANO
+                </span>
+
+                <h1>
+                    Muévete por la ciudad
+                    de forma
+                    <span>fácil y segura.</span>
+                </h1>
+
+                <p>
+                    Compra tu tarjeta, consulta tu saldo y conoce
+                    las paradas de nuestro circuito urbano.
+                </p>
+
+                <div class="hero-acciones">
+
+                    <button class="btn-principal btlogin" type="button">
+                        Administrar mi tarjeta
+                    </button>
+
+                    <a href="#rutas-publicas" class="btn-secundario">
+                        Conocer las rutas
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- TARJETA DECORATIVA -->
+
+            <div class="hero-tarjeta">
+
+                <div class="mini-titulo">
+                    TARJETA BUS URBANO
+                </div>
+
+                <div class="mini-icono"></div>
+
+                <div class="linea-decorativa"></div>
+
+                <h2>**** **** **** 2026</h2>
+
+                <div class="mini-pie">
+                    TRANSPORTE CIUDAD
+                    <span style="float:right; font-size:1.2rem;">
+                        BU
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BENEFICIOS DEL SERVICIO -->
+
+        <section class="beneficios">
+
+            <article>
+
+                <span>01</span>
+
+                <h3>Tarjeta personal</h3>
+
+                <p>
+                    Adquiere tu tarjeta y administra tu información
+                    desde tu propia cuenta.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <span>02</span>
+
+                <h3>Consulta tu saldo</h3>
+
+                <p>
+                    Revisa cuánto dinero tienes disponible y realiza
+                    recargas cuando lo necesites.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <span>03</span>
+
+                <h3>Conoce las rutas</h3>
+
+                <p>
+                    Consulta los recorridos y las diferentes paradas
+                    disponibles del transporte urbano.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- RUTAS PÚBLICAS -->
+
+        <section class="rutas-publicas" id="rutas-publicas">
+
+            <div class="titulo-seccion">
+
+                <span class="etiqueta">RECORRIDOS</span>
+
+                <h2>Conoce nuestras rutas</h2>
+
+                <p>
+                    Consulta algunas de las paradas disponibles
+                    de nuestro servicio de transporte.
+                </p>
+
+            </div>
+
+            <div class="ruta-linea" id="lista-ruta-publica">
+
+                <!-- Las paradas se generan desde JavaScript -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================================= -->
+    <!-- VENTANA DE LOGIN Y REGISTRO -->
+    <!-- ================================= -->
+
+    <div class="wrapper">
+
+        <!-- BOTÓN PARA CERRAR -->
+
+        <span class="icono-close" role="button" tabindex="0">
+            ×
+        </span>
+
+
+        <!-- FORMULARIO DE LOGIN -->
+
+        <div class="form-box login">
+
+            <h2>Iniciar sesión</h2>
+
+            <p class="form-subtitulo">
+                Ingresa a tu cuenta de BusUrbano
+            </p>
+
+            <form id="form-login">
+
+                <div class="input-box">
+
+                    <label for="login-correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="login-correo"
+                        placeholder="Ingresa tu correo"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label for="login-password">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="login-password"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" class="btn">
+                    Ingresar
+                </button>
+
+                <p id="mensaje-login" class="mensaje"></p>
+
+
+                <div class="login-registro">
+
+                    <p>
+                        ¿No tienes una cuenta?
+
+                        <a href="#" class="registro-link">
+                            Regístrate
+                        </a>
+                    </p>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- FORMULARIO DE REGISTRO -->
+
+        <div class="form-box registro">
+
+            <h2>Crear cuenta</h2>
+
+            <p class="form-subtitulo">
+                Regístrate para utilizar nuestros servicios
+            </p>
+
+            <form id="form-registro">
+
+                <div class="input-box">
+
+                    <label for="registro-nombre">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registro-nombre"
+                        placeholder="Ingresa tu nombre"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label for="registro-correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registro-correo"
+                        placeholder="Ingresa tu correo"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label for="registro-password">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registro-password"
+                        placeholder="Crea una contraseña"
+                        minlength="4"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" class="btn">
+                    Crear cuenta
+                </button>
+
+                <p id="mensaje-registro" class="mensaje"></p>
+
+
+                <div class="login-registro">
+
+                    <p>
+                        ¿Ya tienes una cuenta?
+
+                        <a href="#" class="login-link">
+                            Inicia sesión
+                        </a>
+                    </p>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================================= -->
+    <!-- PANEL PRIVADO DEL USUARIO -->
+    <!-- ================================= -->
+
+    <section id="panel-privado" class="panel-privado oculto">
+
+
+        <!-- MENÚ LATERAL -->
+
+        <aside class="barra-lateral">
+
+            <div class="logo-panel">
+
+                <a href="#" class="logo" style="color:white;">
+                    BU BusUrbano
+                </a>
+
+            </div>
+
+
+            <p class="menu-label">
+                MENÚ PRINCIPAL
+            </p>
+
+
+            <!-- RESUMEN -->
+
+            <button
+                class="opcion-menu seleccionada"
+                data-vista="resumen"
+                type="button"
+            >
+                ▦
+                <span>Resumen</span>
+            </button>
+
+
+            <!-- COMPRAR TARJETA -->
+
+            <button
+                class="opcion-menu"
+                data-vista="comprar"
+                type="button"
+            >
+                ▤
+                <span>Comprar tarjeta</span>
+            </button>
+
+
+            <!-- MI SALDO -->
+
+            <button
+                class="opcion-menu"
+                data-vista="saldo"
+                type="button"
+            >
+                ▣
+                <span>Mi saldo</span>
+            </button>
+
+
+            <!-- RECARGAR -->
+
+            <button
+                class="opcion-menu"
+                data-vista="recargar"
+                type="button"
+            >
+                ＋
+                <span>Cargar tarjeta</span>
+            </button>
+
+
+            <!-- RUTAS -->
+
+            <button
+                class="opcion-menu"
+                data-vista="rutas"
+                type="button"
+            >
+                ⇄
+                <span>Rutas del bus</span>
+            </button>
+
+
+            <!-- HISTORIAL -->
+
+            <button
+                class="opcion-menu"
+                data-vista="historial"
+                type="button"
+            >
+                ◷
+                <span>Historial de viajes</span>
+            </button>
+
+
+            <!-- CERRAR SESIÓN -->
+
+            <div class="menu-abajo">
+
+                <button
+                    class="opcion-menu salir"
+                    id="cerrar-sesion"
+                    type="button"
+                >
+                    ↪
+                    <span>Cerrar sesión</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- CONTENIDO DEL PANEL -->
+
+        <main class="contenido-panel">
+
+
+            <!-- BARRA SUPERIOR -->
+
+            <header class="barra-superior">
+
+                <div>
+
+                    <span class="etiqueta">
+                        BUSURBANO
+                    </span>
+
+                    <h1 id="titulo-vista">
+                        Resumen
+                    </h1>
+
+                </div>
+
+
+                <div class="usuario-chip">
+
+                    <div class="avatar" id="avatar-usuario">
+                        U
+                    </div>
+
+                    <span id="nombre-usuario">
+                        Usuario
+                    </span>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- AQUÍ SE CARGAN LAS DIFERENTES SECCIONES -->
+
+            <div class="contenido-vista" id="contenido-vista">
+
+                <!-- El contenido se genera desde Funcions.js -->
+
+            </div>
+
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- ARCHIVO JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script src="Funcions.js"></script>
+
+</body>
+</html>
